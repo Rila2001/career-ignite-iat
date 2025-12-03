@@ -13,6 +13,10 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ["Plus Jakarta Sans", "sans-serif"],
+        body: ["Inter", "sans-serif"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -65,25 +69,49 @@ export default {
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+        "float": {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-20px)" },
+        },
+        "glow-pulse": {
+          "0%, 100%": { opacity: "0.5" },
+          "50%": { opacity: "1" },
+        },
+        "slide-in-bottom": {
+          from: { opacity: "0", transform: "translateY(40px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
+        "count-up": {
+          from: { opacity: "0", transform: "scale(0.5)" },
+          to: { opacity: "1", transform: "scale(1)" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "float": "float 6s ease-in-out infinite",
+        "glow-pulse": "glow-pulse 2s ease-in-out infinite",
+        "slide-in-bottom": "slide-in-bottom 0.6s ease-out forwards",
+        "count-up": "count-up 0.5s ease-out forwards",
+      },
+      backgroundImage: {
+        "hero-gradient": "linear-gradient(135deg, hsl(222 47% 8%) 0%, hsl(222 47% 15%) 50%, hsl(222 35% 20%) 100%)",
+        "card-gradient": "linear-gradient(180deg, hsl(222 47% 18%) 0%, hsl(222 47% 12%) 100%)",
+        "accent-gradient": "linear-gradient(135deg, hsl(32 95% 54%) 0%, hsl(25 95% 50%) 100%)",
+        "glow-gradient": "radial-gradient(circle at center, hsl(32 95% 54% / 0.15) 0%, transparent 70%)",
+      },
+      boxShadow: {
+        "glow": "0 0 60px hsl(32 95% 54% / 0.3)",
+        "glow-sm": "0 0 30px hsl(32 95% 54% / 0.2)",
+        "card": "0 20px 40px hsl(222 47% 5% / 0.5)",
+        "button": "0 8px 30px hsl(32 95% 54% / 0.4)",
       },
     },
   },
